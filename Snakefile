@@ -6,7 +6,7 @@ rule get_ids:
     script:
         "scripts/get_ids.py"
 
-rule get_functionality
+rule get_functionality:
     input:
         "data/ids.txt"
     output:
@@ -14,7 +14,7 @@ rule get_functionality
     script:
         "scripts/get_function.py"
 
-rule get_seq
+rule get_seq:
     input:
         "data/ids.txt"
     output:
@@ -22,11 +22,11 @@ rule get_seq
     script:
         "scripts/get_seq.py"
 
-rule make_report
+rule make_report:
     input:
-        "data/function.txt"
+        "data/function.txt",
         "data/seqs.txt"
     output:
-        "report.txt"
+        "data/report.txt"
     script:
         "make_report.py"
