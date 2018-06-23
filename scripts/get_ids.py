@@ -2,10 +2,10 @@ input = snakemake.input[0]
 output = snakemake.output[0]
 
 file = open(input, "r")
-output = ""
+ids = ""
 
 for line in file.readlines():
     if line[:2] == "lp":
-        output += line[:7] + "\n"
+        ids += line[:7] + "\n"
 
-output = output[:-2]
+output = ids[:-2]
