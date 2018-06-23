@@ -4,4 +4,4 @@ rule get_ids:
     output:
         "data/ids.txt"
     script:
-        "scripts/getids.py"
+        "scripts/get_ids.py"
