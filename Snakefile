@@ -3,8 +3,8 @@ rule get_ids:
         "data/RNA-Seq-counts.txt"
     output:
         "data/ids.txt"
-    script:
-        "scripts/get_ids.py"
+    shell:
+        "python3 scripts/get_ids.py {input} > {output}"
 
 rule get_functionality:
     input:
@@ -22,6 +22,14 @@ rule get_seq:
     script:
         "scripts/get_seq.py"
 
+rule get_gc:
+    input:
+        "data/seqs.txt"
+    output:
+        "data/gc.txt"
+    script:
+        "scripts/get_gc.py"
+
 rule get_pmids:
     input:
         "data/ids.txt"
@@ -30,7 +38,7 @@ rule get_pmids:
     script:
         "scripts/get_pmids.py"
 
-rule sort_pmids:
+rule pmids_sorter:
     input:
         "data/pmids.txt"
     output:
@@ -57,9 +65,9 @@ rule get_pathways:
 rule make_report:
     input:
         "data/function.txt",
-        "data/seqs.txt",
         "data/pmids_matched.txt",
-        "data/pathways.txt"
+        "data/pathways.txt",
+        "data/gc.txt"
     output:
         "data/report.txt"
     script:

@@ -1,11 +1,20 @@
-input = snakemake.input[0]
-output = snakemake.output[0]
+import sys
 
-file = open(input, "r")
+#file = open(sys.argv[0], "r")
+#file = open("test.txt", "r")
+file = open("../data/RNA-Seq-counts.txt", "r")
+
 ids = ""
-
 for line in file.readlines():
     if line[:2] == "lp":
         ids += line[:7] + "\n"
+file.close()
 
-output = ids[:-2]
+print(ids[:-1])
+#sys.argv[1] = ids[:-1]
+
+#result = open(sys.argv[1], "w")
+result = open("../data/ids.txt", "w")
+result.write(ids[:-1])
+result.close()
+
