@@ -4,8 +4,9 @@ file = open(sys.argv[1], "r")
 ids = []
 for line in file:
     ids.append(line[:-1])
+file.close()
 
-output_format = "tsv"
+output_format = "tsv-no-header"
 echo = "1"
 limit = "1"
 cid = "tostilord@gmail.com"
@@ -17,6 +18,3 @@ request_url = "https://string-db.org/api/" + output_format + "/get_string_ids?"\
               + "&caller_identity=" + cid
 
 print(request_url)
-
-#response = urllib.request.urlopen(request_url).read()
-#print(response)

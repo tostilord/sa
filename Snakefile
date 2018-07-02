@@ -1,6 +1,6 @@
 rule get_ids:
     input:
-        "data/RNA5.txt"
+        "input/RNA5.txt"
     output:
         "data/ids.txt"
     shell:
