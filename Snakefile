@@ -21,6 +21,3 @@ rule get_string_data:
         "data/string_data.tsv"
     shell:
         "curl -o {output} $(cat {input})"
-
-rule get_DAG:
-    #todo
