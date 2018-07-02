@@ -23,10 +23,10 @@ request_url = "https://string-db.org/api/" + output_format + "/get_string_ids?"\
               + "&caller_identity=" + cid
 
 #print("debug1: request url:")
-#print(request_url)
+print(request_url)
 
-response = urllib.request.urlopen(request_url).read()
-print(response)
+#response = urllib.request.urlopen(request_url).read()
+#print(response)
 
 
 #https://string-db.org/cgi/help.pl?subpage=api%23mapping-identifiers
