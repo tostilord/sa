@@ -1,10 +1,18 @@
 rule get_ids:
     input:
-        "data/RNA-Seq-counts.txt"
+        "data/RNA5.txt"
     output:
         "data/ids.txt"
     shell:
         "python3 scripts/get_ids.py {input} > {output}"
+
+rule get_string_ids:
+    input:
+        "data/ids.txt"
+    output:
+        "data/string_ids.txt"
+    shell:
+        "python3 scripts/get_string_ids.py {input} > {output}"
 
 rule get_functionality:
     input:
