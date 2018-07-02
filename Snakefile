@@ -16,7 +16,7 @@ rule get_functionality:
 
 rule get_seq:
     input:
-        "data/ids.txt"
+        "data/pmids.txt"
     output:
         "data/seqs.txt"
     script:
