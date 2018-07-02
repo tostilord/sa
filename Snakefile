@@ -18,6 +18,9 @@ rule get_string_data:
     input:
         "data/string_query.txt"
     output:
-        "data/string_data.txt"
+        "data/string_data.tsv"
     shell:
         "curl -o {output} $(cat {input})"
+
+rule get_DAG:
+    #todo
