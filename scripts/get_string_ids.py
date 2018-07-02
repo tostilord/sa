@@ -20,4 +20,3 @@ print(request_url)
 
 #response = urllib.request.urlopen(request_url).read()
 #print(response)
-#https://string-db.org/cgi/help.pl?subpage=api%23mapping-identifiers

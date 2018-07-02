@@ -21,3 +21,12 @@ rule get_string_data:
         "data/string_data.tsv"
     shell:
         "curl -o {output} $(cat {input})"
+
+#rule ideas
+# - dag
+# - get sequences
+# - report
+# - string db functionalities
+# - something with other languages
+#     - R
+#     - javascript
