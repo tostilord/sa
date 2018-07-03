@@ -1,0 +1,1 @@
+https://string-db.org/api/tsv/interaction_partners?identifiers=220668.lp_0001%0d220668.lp_0002%0d220668.lp_0004%0d220668.lp_0005%0d220668.lp_0009&species=220668&limit=10&caller_identity=tostilord@gmail.com

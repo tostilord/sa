@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>A bio-informatics workflow</title>
+<style type="text/css">
+
+/**
+Credits for the colors and font selection go to the Twitter Bootstrap framework.
+*/
+
+
+body {
+    color: rgb(51, 51, 51);
+    font-size: 10pt;
+    padding-top: 10px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h1 {
+    font-size: 150%;
+}
+
+h2 {
+    font-size: 140%;
+}
+
+h3 {
+    font-size: 130%;
+}
+
+h4 {
+    font-size: 120%;
+}
+
+h5 {
+    font-size: 110%;
+}
+
+h6 {
+    font-size: 100%;
+}
+
+div#attachments {
+    display: inline-block;
+    color: gray;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 4px 4px 4px 4px;
+    padding: 0px;
+}
+
+div#attachments dt {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+div#attachments dd p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+div#attachments :target dt {
+    font-weight: bold;
+}
+
+div#attachments :target a {
+    color: rgb(70, 136, 71);
+}
+
+
+h1.title {
+    text-align: center;
+    font-size: 180%;
+}
+
+div.document {
+    position: relative;
+    background: white;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 4px 4px 4px 4px;
+}
+
+div.document:after {
+    content: "snakemake report";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    padding: 3px 7px;
+    background-color: #f5f5f5;
+    border: 1px solid rgb(221, 221, 221);
+    color: #9da0a4;
+    font-weight: bold;
+    font-size: 12pt;
+    border-radius: 0 0 0 4px;
+}
+
+div.document p {
+    text-align: justify;
+}
+
+div#metadata {
+    text-align: right;
+}
+
+table.docutils {
+    border: none;
+    border-collapse: collapse;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    text-align: center;
+}
+
+table.docutils th {
+    border: none;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    padding: 5px;
+}
+
+table.docutils td {
+    border: none;
+    padding: 5px;
+}
+
+table.docutils th:last-child, td:last-child {
+    text-align: left;
+}
+
+table.docutils th:first-child, td:first-child {
+    text-align: right;
+}
+
+table.docutils th:only-child, td:only-child {
+    text-align: center;
+}
+
+table.docutils.footnote {
+    border: none;
+    text-align: left;
+}
+
+a {
+    color: rgb(0, 136, 204);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(0, 85, 128);
+    text-decoration: underline;
+}
+
+
+div.figure {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+img {
+    max-width: 100%;
+}
+
+p.caption {
+    font-style: italic;
+}
+
+</style>
+</head>
+<body>
+<div class="document" id="a-bio-informatics-workflow">
+<h1 class="title">A bio-informatics workflow</h1>
+
+<p>RNA_Seq identifiers were isolated and mapped to string-db to get string identifiers
+which were used to find protein-protein interactions (see T2). Information about NCBI taxon
+identifiers, taxon names and gene annotations were gathered as well and can be found
+in T1.</p>
+<p>A total of 5 genes were processed.</p>
+<div class="container" id="attachments">
+<div class="container" id="t1">
+<dl class="docutils">
+<dt>T1:</dt>
+<dd><span class="raw-html"><a href="data:text/tab-separated-values;charset=utf8;filename=string_ids.tsv;base64,bHBfMDAwMQkwCTIyMDY2OC5scF8wMDAxCTIyMDY2OAlMYWN0b2JhY2lsbHVzIHBsYW50YXJ1bQlkbmFBCUNocm9tb3NvbWFsIHJlcGxpY2F0aW9uIGluaXRpYXRpb24gcHJvdGVpbjsgUGxheXMgYW4gaW1wb3J0YW50IHJvbGUgaW4gdGhlIGluaXRpYXRpb24gYW5kIHJlZ3VsYXRpb24gb2YgY2hyb21vc29tYWwgcmVwbGljYXRpb24uIEJpbmRzIHRvIHRoZSBvcmlnaW4gb2YgcmVwbGljYXRpb247IGl0IGJpbmRzIHNwZWNpZmljYWxseSBkb3VibGUtc3RyYW5kZWQgRE5BIGF0IGEgOSBicCBjb25zZW5zdXMgKGRuYUEgYm94KTogNSctVFRBVENbQ0FdQVtDQV1BLTMnLiBEbmFBIGJpbmRzIHRvIEFUUCBhbmQgdG8gYWNpZGljIHBob3NwaG9saXBpZHMKbHBfMDAwMgkxCTIyMDY2OC5scF8wMDAyCTIyMDY2OAlMYWN0b2JhY2lsbHVzIHBsYW50YXJ1bQlkbmFOCUROQS1kaXJlY3RlZCBETkEgcG9seW1lcmFzZSBJSUksIGJldGEgY2hhaW47IEROQSBwb2x5bWVyYXNlIElJSSBpcyBhIGNvbXBsZXgsIG11bHRpY2hhaW4gZW56eW1lIHJlc3BvbnNpYmxlIGZvciBtb3N0IG9mIHRoZSByZXBsaWNhdGl2ZSBzeW50aGVzaXMgaW4gYmFjdGVyaWEuIFRoaXMgRE5BIHBvbHltZXJhc2UgYWxzbyBleGhpYml0cyAzJyB0byA1JyBleG9udWNsZWFzZSBhY3Rpdml0eS4gVGhlIGJldGEgY2hhaW4gaXMgcmVxdWlyZWQgZm9yIGluaXRpYXRpb24gb2YgcmVwbGljYXRpb24gb25jZSBpdCBpcyBjbGFtcGVkIG9udG8gRE5BLCBpdCBzbGlkZXMgZnJlZWx5IChiaWRpcmVjdGlvbmFsIGFuZCBBVFAtIGluZGVwZW5kZW50KSBhbG9uZyBkdXBsZXggRE5BCmxwXzAwMDQJMgkyMjA2NjgubHBfMDAwNAkyMjA2NjgJTGFjdG9iYWNpbGx1cyBwbGFudGFydW0JbHBfMDAwNAlIeXBvdGhldGljYWwgcHJvdGVpbgpscF8wMDA1CTMJMjIwNjY4LmxwXzAwMDUJMjIwNjY4CUxhY3RvYmFjaWxsdXMgcGxhbnRhcnVtCXJlY0YJUmVjb21iaW5hdGlvbiBwcm90ZWluIEY7IFRoZSBSZWNGIHByb3RlaW4gaXMgaW52b2x2ZWQgaW4gRE5BIG1ldGFib2xpc207IGl0IGlzIHJlcXVpcmVkIGZvciBETkEgcmVwbGljYXRpb24gYW5kIG5vcm1hbCBTT1MgaW5kdWNpYmlsaXR5LiBSZWNGIGJpbmRzIHByZWZlcmVudGlhbGx5IHRvIHNpbmdsZS1zdHJhbmRlZCwgbGluZWFyIEROQS4gSXQgYWxzbyBzZWVtcyB0byBiaW5kIEFUUApscF8wMDA5CTQJMjIwNjY4LmxwXzAwMDkJMjIwNjY4CUxhY3RvYmFjaWxsdXMgcGxhbnRhcnVtCXJwc0YJMzBTIHJpYm9zb21hbCBwcm90ZWluIFM2OyBCaW5kcyB0b2dldGhlciB3aXRoIFMxOCB0byAxNlMgcmlib3NvbWFsIFJOQQo=" download="string_ids.tsv" draggable="true">string_ids.tsv</a></span></dd>
+</dl>
+</div>
+<div class="container" id="t2">
+<dl class="docutils">
+<dt>T2:</dt>
+<dd><span class="raw-html"><a href="data:text/tab-separated-values;charset=utf8;filename=string_interaction_partners.tsv;base64,c3RyaW5nSWRfQQlzdHJpbmdJZF9CCXByZWZlcnJlZE5hbWVfQQlwcmVmZXJyZWROYW1lX0IJbmNiaVRheG9uSWQJc2NvcmUJbnNjb3JlCWZzY29yZQlwc2NvcmUJYXNjb3JlCWVzY29yZQlkc2NvcmUJdHNjb3JlCmxwXzAwMDEJbHBfMDAwMglkbmFBCWRuYU4JMjIwNjY4CTAuOTk1CTAuNjc4CTAJMC4zNjQJMC40MDcJMC42NDQJMAkwLjkxNQpscF8wMDAxCWxwXzAwMDUJZG5hQQlyZWNGCTIyMDY2OAkwLjk1NgkwLjM4OAkwCTAuMjU1CTAuMjA0CTAuMTMzCTAJMC44ODMKbHBfMDAwMQlscF8wMDA2CWRuYUEJZ3lyQgkyMjA2NjgJMC45NjUJMC4zODgJMAkwCTAuMDk5CTAJMAkwLjk0MQpscF8wMDAxCWxwXzAwMTQJZG5hQQlkbmFDCTIyMDY2OAkwLjk3MQkwLjA3NAkwCTAuMjA4CTAuMTE5CTAuODU1CTAJMC43NDYKbHBfMDAwMQlscF8xMDIyCWRuYUEJcnBvQwkyMjA2NjgJMC45MgkwCTAJMC4xNzIJMC4wNjIJMAkwCTAuOTA2CmxwXzAwMDEJbHBfMTAzNglkbmFBCXJwbEIJMjIwNjY4CTAuODk5CTAJMAkwCTAJMC44MDYJMAkwLjUwNQpscF8wMDAxCWxwXzE1MTMJZG5hQQlkbmFJCTIyMDY2OAkwLjkxNQkwCTAJMAkwLjA2MQkwLjYwNwkwCTAuNzg5CmxwXzAwMDEJbHBfMTg0MAlkbmFBCXBhckUJMjIwNjY4CTAuOTE5CTAuMzg4CTAJMAkwLjA5NwkwCTAJMC44NjUKbHBfMDAwMQlscF8yMzAxCWRuYUEJcmVjQQkyMjA2NjgJMC44OTYJMC4wNjEJMAkwCTAJMC4wNzUJMAkwLjg5CmxwXzAwMDEJbHBfMzY2MglkbmFBCWFkaEUJMjIwNjY4CTAuOTAzCTAJMAkwCTAJMC44MjgJMAkwLjQ2MwpscF8wMDAyCWxwXzAwMDEJZG5hTglkbmFBCTIyMDY2OAkwLjk5NQkwLjY3OAkwCTAuMzY0CTAuNDA3CTAuNjQ0CTAJMC45MTUKbHBfMDAwMglscF8wNjA0CWRuYU4JZHV0CTIyMDY2OAkwLjk5NAkwLjA2MwkwCTAJMC45OTMJMC4xMTkJMAkwLjEyCmxwXzAwMDIJbHBfMDY5MglkbmFOCW5yZEYJMjIwNjY4CTAuOTk1CTAJMAkwCTAuOTkzCTAuMTE3CTAJMC4zNApscF8wMDAyCWxwXzA2OTMJZG5hTglucmRFCTIyMDY2OAkwLjk5NAkwCTAJMAkwLjk5MwkwCTAJMC4xODMKbHBfMDAwMglscF8wNjk4CWRuYU4JZG5hWAkyMjA2NjgJMC45OTgJMC4wNzIJMAkwLjM0NQkwLjA5NQkwLjkxMQkwLjgJMC44MzQKbHBfMDAwMglscF8wNzA1CWRuYU4JaG9sQgkyMjA2NjgJMC45OTkJMC4wOTIJMAkwLjE3CTAuNDk2CTAuOTMJMC45NzkJMC40MzcKbHBfMDAwMglscF8xNTA4CWRuYU4JcG9sQQkyMjA2NjgJMC45OTkJMAkwCTAJMC41MzgJMC45NzYJMC45NzkJMC40NDcKbHBfMDAwMglscF8xNzM3CWRuYU4JZGluRwkyMjA2NjgJMC45OTkJMC4zODkJMAkwCTAuMTA0CTAuOTc4CTAuOTAxCTAuNDg3CmxwXzAwMDIJbHBfMTg5OQlkbmFOCWRuYUUJMjIwNjY4CTAuOTk3CTAJMAkwCTAuMDYxCTAuOTc5CTAuOAkwLjM5OQpscF8wMDAyCWxwXzIxMjgJZG5hTglob2xBCTIyMDY2OAkwLjk5NgkwLjA1NQkwCTAuMTU4CTAuMDY2CTAuOTMyCTAuOAkwLjcyCmxwXzAwMDQJbHBfMDAwNQlscF8wMDA0CXJlY0YJMjIwNjY4CTAuODg0CTAuODgzCTAJMAkwCTAJMAkwCmxwXzAwMDQJbHBfMDAwNglscF8wMDA0CWd5ckIJMjIwNjY4CTAuOTA3CTAuOTA3CTAJMAkwCTAJMAkwCmxwXzAwMDQJbHBfMDAwNwlscF8wMDA0CWd5ckEJMjIwNjY4CTAuNjkxCTAuNjkxCTAJMAkwCTAJMAkwCmxwXzAwMDQJbHBfMDU0OAlscF8wMDA0CWhzbE8JMjIwNjY4CTAuNDQzCTAJMAkwLjQ0MwkwCTAJMAkwCmxwXzAwMDUJbHBfMDAwMQlyZWNGCWRuYUEJMjIwNjY4CTAuOTU2CTAuMzg4CTAJMC4yNTUJMC4yMDQJMC4xMzMJMAkwLjg4MwpscF8wMDA1CWxwXzAwMDIJcmVjRglkbmFOCTIyMDY2OAkwLjk2NQkwLjM4OAkwCTAuNDQJMC4yMDMJMAkwCTAuODg5CmxwXzAwMDUJbHBfMDAwNAlyZWNGCWxwXzAwMDQJMjIwNjY4CTAuODg0CTAuODgzCTAJMAkwCTAJMAkwCmxwXzAwMDUJbHBfMDAwNglyZWNGCWd5ckIJMjIwNjY4CTAuOTg5CTAuOTA3CTAJMAkwLjMzNQkwCTAJMC44NDUKbHBfMDAwNQlscF8wMDA3CXJlY0YJZ3lyQQkyMjA2NjgJMC45NTUJMC42OTEJMAkwCTAuMDYzCTAuMTE1CTAJMC44NDUKbHBfMDAwNQlscF8wNzAwCXJlY0YJcmVjUgkyMjA2NjgJMC45MzkJMC4wNzQJMAkwLjUzNQkwLjA2MQkwCTAJMC44NjcKbHBfMDAwNQlscF8xMTQ0CXJlY0YJcGNyQQkyMjA2NjgJMC44NgkwLjA1NQkwCTAuNTgzCTAuMDY4CTAJMAkwLjY2NQpscF8wMDA1CWxwXzE2MjcJcmVjRglyZWNHCTIyMDY2OAkwLjg5MwkwLjA1NQkwCTAJMC4wNjMJMAkwCTAuODg5CmxwXzAwMDUJbHBfMTk2NglyZWNGCXJlY08JMjIwNjY4CTAuOTc2CTAJMAkwCTAuMTE1CTAuNzg0CTAJMC44ODcKbHBfMDAwNQlscF8yNjkzCXJlY0YJYWRkQQkyMjA2NjgJMC44NTYJMAkwCTAJMC4wNjgJMC4wOTEJMAkwLjg0NApscF8wMDA5CWxwXzAwMTEJcnBzRglycHNSCTIyMDY2OAkwLjk5OQkwLjc0MgkwCTAJMC45OTMJMC45NDEJMC45MDEJMC40NApscF8wMDA5CWxwXzA2MjEJcnBzRglycGxKCTIyMDY2OAkwLjk5OAkwCTAJMAkwLjc1MgkwLjk3OQkwCTAuNjczCmxwXzAwMDkJbHBfMTAyNQlycHNGCXJwc0wJMjIwNjY4CTAuOTk5CTAuMDY0CTAJMAkwLjc4MQkwLjkzMgkwLjkwMQkwLjQ0CmxwXzAwMDkJbHBfMTAyNglycHNGCXJwc0cJMjIwNjY4CTAuOTk5CTAuMDc1CTAJMAkwLjczNgkwLjg5MQkwLjkwMQkwLjc0OQpscF8wMDA5CWxwXzEwMzIJcnBzRglycHNKCTIyMDY2OAkwLjk5OQkwCTAJMAkwLjgwOAkwLjkyMQkwLjkwMQkwLjU4OApscF8wMDA5CWxwXzEwNTMJcnBzRglycHNFCTIyMDY2OAkwLjk5OQkwCTAJMAkwLjczNgkwLjk0MQkwLjkwMQkwLjc2NgpscF8wMDA5CWxwXzEwNjEJcnBzRglycHNLCTIyMDY2OAkwLjk5OQkwCTAJMAkwLjc3NwkwLjkyMQkwLjkwMQkwLjQ5NgpscF8wMDA5CWxwXzEwNzgJcnBzRglycHNJCTIyMDY2OAkwLjk5OQkwLjA0MgkwCTAJMC44MDEJMC45MzkJMC45MDEJMC4zOTcKbHBfMDAwOQlscF8xNjM2CXJwc0YJcnBzUAkyMjA2NjgJMC45OTgJMC4wNDMJMAkwCTAuNzI2CTAuOTQxCTAuOTAxCTAuMzk3CmxwXzAwMDkJbHBfMjA1NQlycHNGCXJwc0IJMjIwNjY4CTAuOTk5CTAJMAkwCTAuNzkzCTAuOTM5CTAuOTAxCTAuNDA4Cg==" download="string_interaction_partners.tsv" draggable="true">string_interaction_partners.tsv</a></span></dd>
+</dl>
+</div>
+</div>
+<div class="container" id="metadata">
+2018-07-03</div>
+</div>
+</body>
+</html>

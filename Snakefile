@@ -60,8 +60,7 @@ rule report:
 
         RNA_Seq identifiers were isolated and mapped to string-db to get string identifiers
         which were used to find protein-protein interactions (see T2). Information about NCBI taxon
-        identifiers, taxon names and gene annotations were gathered as well and can be found
-        in T1.
+        identifiers, taxon names and gene annotations were gathered as well (see T1).
 
         A total of {ids} genes were processed.
         """, output[0], T1=input[0], T2=input[1])
