@@ -1,82 +1,67 @@
+rule all:
+    input:
+        "data/report.html"
+
 rule get_ids:
     input:
-        "data/RNA5.txt"
+        "input/RNA5.txt"
     output:
         "data/ids.txt"
     shell:
         "python3 scripts/get_ids.py {input} > {output}"
 
-rule get_string_ids:
+rule get_string_ids_query:
     input:
         "data/ids.txt"
     output:
-        "data/string_ids.txt"
+        "data/string_ids_query.txt"
     shell:
         "python3 scripts/get_string_ids.py {input} > {output}"
 
-rule get_functionality:
+rule get_string_ids:
     input:
-        "data/ids.txt"
+        "data/string_ids_query.txt"
     output:
-        "data/function.txt"
-    script:
-        "scripts/get_function.py"
+        "data/string_ids.tsv"
+    shell:
+        "curl -o {output} $(cat {input})"
 
-rule get_seq:
+rule get_string_interaction_partners_query:
     input:
-        "data/pmids.txt"
+        "data/string_ids.tsv"
     output:
-        "data/seqs.txt"
-    script:
-        "scripts/get_seq.py"
+        "data/string_interaction_partners_query.txt"
+    shell:
+        "python3 scripts/get_interaction_partners.py {input} > {output}"
 
-rule get_gc:
+rule get_string_interaction_partners:
     input:
-        "data/seqs.txt"
+        "data/string_interaction_partners_query.txt"
     output:
-        "data/gc.txt"
-    script:
-        "scripts/get_gc.py"
+        "data/string_interaction_partners.tsv"
+    shell:
+        "curl -o {output} $(cat {input})"
 
-rule get_pmids:
+rule report:
     input:
-        "data/ids.txt"
+        "data/string_ids.tsv",
+        "data/string_interaction_partners.tsv"
     output:
-        "data/pmids.txt"
-    script:
-        "scripts/get_pmids.py"
+        "data/report.html"
+    run:
+        from snakemake.utils import report
+        with open(input[0], "r") as file:
+            for i, l in enumerate(file):
+                pass
+            ids = i+1
+        report("""
+        A bio-informatics workflow
+        ===================================
 
-rule pmids_sorter:
-    input:
-        "data/pmids.txt"
-    output:
-        "data/pmids_sorted.txt"
-    script:
-        "scripts/pmid_sorter.py"
+        RNA_Seq identifiers were isolated and mapped to string-db to get string identifiers
+        which were used to find protein-protein interactions (see T2). Information about NCBI taxon
+        identifiers, taxon names and gene annotations were gathered as well and can be found
+        in T1.
 
-rule pmid_matcher:
-    input:
-        "data/pmids_sorted.txt"
-    output:
-        "data/pmids_matched.txt"
-    script:
-        "scripts/pmid_matcher.py"
-
-rule get_pathways:
-    input:
-        "data/pmids.txt"
-    output:
-        "data/pathways.txt"
-    script:
-        "scripts/get_pathways.py"
-
-rule make_report:
-    input:
-        "data/function.txt",
-        "data/pmids_matched.txt",
-        "data/pathways.txt",
-        "data/gc.txt"
-    output:
-        "data/report.txt"
-    script:
-        "make_report.py"
+        A total of {ids} genes were processed.
+        """, output[0], T1=input[0], T2=input[1])
