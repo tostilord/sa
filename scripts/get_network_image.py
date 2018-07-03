@@ -9,14 +9,14 @@ file.seek(0)
 species = file.readline().split("\t")[3]
 file.close()
 
-output_format = "tsv"
-limit = "10"
+output_format = "svg"
+white_nodes = "10"
 cid = "tostilord@gmail.com"
 
-request_url = "https://string-db.org/api/" + output_format + "/interaction_partners?"\
+request_url = "https://string-db.org/api/" + output_format + "/network?"\
               + "identifiers=" + "%0d".join(ids)\
               + "&species=" + species\
-              + "&limit=" + limit\
+              + "&add_white_nodes=" + white_nodes\
               + "&caller_identity=" + cid
 
 print(request_url)
