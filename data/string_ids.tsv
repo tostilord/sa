@@ -1,3 +1,4 @@
+queryItem	queryIndex	stringId	ncbiTaxonId	taxonName	preferredName	annotation
 lp_0001	0	220668.lp_0001	220668	Lactobacillus plantarum	dnaA	Chromosomal replication initiation protein; Plays an important role in the initiation and regulation of chromosomal replication. Binds to the origin of replication; it binds specifically double-stranded DNA at a 9 bp consensus (dnaA box): 5'-TTATC[CA]A[CA]A-3'. DnaA binds to ATP and to acidic phospholipids
 lp_0002	1	220668.lp_0002	220668	Lactobacillus plantarum	dnaN	DNA-directed DNA polymerase III, beta chain; DNA polymerase III is a complex, multichain enzyme responsible for most of the replicative synthesis in bacteria. This DNA polymerase also exhibits 3' to 5' exonuclease activity. The beta chain is required for initiation of replication once it is clamped onto DNA, it slides freely (bidirectional and ATP- independent) along duplex DNA
 lp_0004	2	220668.lp_0004	220668	Lactobacillus plantarum	lp_0004	Hypothetical protein

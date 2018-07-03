@@ -6,7 +6,7 @@ for line in file:
     ids.append(line[:-1])
 file.close()
 
-output_format = "tsv-no-header"
+output_format = "tsv"
 echo = "1"
 limit = "1"
 cid = "tostilord@gmail.com"

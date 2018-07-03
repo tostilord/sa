@@ -1,1 +1,1 @@
-https://string-db.org/api/tsv-no-header/get_string_ids?identifiers=lp_0001%0dlp_0002%0dlp_0004%0dlp_0005%0dlp_0009&echo_query=1&limit=1&caller_identity=tostilord@gmail.com
+https://string-db.org/api/tsv/get_string_ids?identifiers=lp_0001%0dlp_0002%0dlp_0004%0dlp_0005%0dlp_0009&echo_query=1&limit=1&caller_identity=tostilord@gmail.com

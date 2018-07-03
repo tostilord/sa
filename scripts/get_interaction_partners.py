@@ -5,6 +5,7 @@ file = open(sys.argv[1], "r")
 ids = []
 for line in file:
     ids.append(line.split("\t")[2])
+ids.remove(ids[0])
 file.seek(0)
 species = file.readline().split("\t")[3]
 file.close()

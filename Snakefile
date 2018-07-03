@@ -53,7 +53,7 @@ rule report:
         with open(input[0], "r") as file:
             for i, l in enumerate(file):
                 pass
-            ids = i+1
+            ids = i
         report("""
         A bio-informatics workflow
         ===================================
